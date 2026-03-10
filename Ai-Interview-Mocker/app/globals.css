@@ -1,0 +1,33 @@
+/* globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: hsl(210, 100%, 50%);  /* Primary color */
+  --border: hsl(210, 8%, 90%);
+  --background: #ffffff; /* Light mode background */
+  --foreground: #171717; /* Light mode text color */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: hsl(210, 100%, 40%);  /* Dark mode primary color */
+    --border: hsl(210, 12%, 30%);
+    --background: #0a0a0a; /* Dark mode background */
+    --foreground: #ededed; /* Dark mode text color */
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .border-border {
+    border-color: hsl(var(--border));
+  }
+}
